@@ -15,6 +15,16 @@ class ProductModel extends Model{
         return '';
     }
 
+    public function Edit(){
+        
+        return '';
+    }
+
+    public function Delete(){
+        
+        return '';
+    }
+
 }
 
 
