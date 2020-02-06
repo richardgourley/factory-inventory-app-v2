@@ -8,6 +8,7 @@ require_once('classes/Handler.php');
 require_once('classes/Controller.php');
 require_once('classes/Model.php');
 require_once('classes/DbSetUp.php');
+require_once('classes/DataValidationSanitization.php');
 require_once('controllers/home.php');
 require_once('models/home.php');
 require_once('controllers/product.php');
@@ -17,7 +18,8 @@ require_once('models/user.php');
 
 //First time use - set up database and direct to user set up
 $db_setup = new DbSetUp();
-var_dump( $_GET ); 
+//var_dump( $_GET ); 
+//var_dump( $_SESSION );
 /*
 if( $db_setup->db_is_setup() ){
     if( $db_setup->main_admin_is_setup() ){
