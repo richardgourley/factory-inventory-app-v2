@@ -16,7 +16,7 @@ class DataValidationSanitization{
         $pattern = "/[^a-zA-Z ]/";
 
         if( preg_match( $pattern, $field ) == 1 ){
-            return "$field_name must only contain letters.";
+            return "$field_name must only contain letters.<br>";
         }
 
         return '';
@@ -30,7 +30,7 @@ class DataValidationSanitization{
             return '';
         }
 
-        return "$field_name must be a whole number or a decimal number with two decimal places.";
+        return "$field_name must be a whole number or a decimal number with two decimal places.<br>";
     }
 
     public function validate_int( $field, $field_name ){
@@ -38,7 +38,7 @@ class DataValidationSanitization{
             return '';
         }
 
-        return "Your $field_name must be a whole number.";
+        return "Your $field_name must be a whole number.<br>";
     }
 
 }

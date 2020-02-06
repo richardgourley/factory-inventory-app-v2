@@ -9,8 +9,6 @@ class Handler{
         //redirects to home/index if request is blank
         $this->request = $request;
 
-        var_dump( $this->request );
-
         if($this->request['controller'] == ""){
             $this->controller = 'home';
         }else{
@@ -23,8 +21,6 @@ class Handler{
             $this->action = $request['action'];
         }
 
-        var_dump( $this->controller);
-        var_dump( $this->action);
 
     }
 
