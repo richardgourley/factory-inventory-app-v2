@@ -1,9 +1,8 @@
 <?php echo $viewmodel; ?>
-<p>Product Add</p>
 
 <div>
   <h3>Add a product</h3>
-  <form method="post" action="<?php htmlentities( $_SERVER['PHP_SELF'], ENT_QUOTES ); ?>">
+  <form method="post" action="<?php htmlentities( SITEPATH . '/models/product.php' ); ?>">
       <table class="form-table">
         <tbody>
           <tr>

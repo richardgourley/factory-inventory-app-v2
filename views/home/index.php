@@ -1,2 +1,7 @@
 <?php echo $viewmodel; ?>
-<p>WELCOME!</p>
+<?php
+if( isset( $_SESSION['post_message'] ) ){
+	echo $_SESSION['post_message'];
+	$_SESSION['post_message'] = '';
+}
+?>
