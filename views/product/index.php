@@ -1,4 +1,3 @@
-<?php //var_dump( $viewmodel ); ?>
 <h1>Products</h1>
 
 <?php foreach( $viewmodel as $product ): ?>

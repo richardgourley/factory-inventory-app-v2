@@ -43,7 +43,7 @@ class DbSetUp extends Model{
         return false;
     }
 
-    public function set_up_db(){
+    public function setup_db(){
         $this->setup_database();
         $this->setup_tables_and_priveliges();
     }
@@ -64,7 +64,7 @@ class DbSetUp extends Model{
             CREATE TABLE users(
              id SMALLINT NOT NULL AUTO_INCREMENT, 
              username VARCHAR(100) NOT NULL, 
-             pword VARCHAR(100) NOT NULL, 
+             pword VARCHAR(255) NOT NULL, 
              priveliges_id SMALLINT NOT NULL, 
              PRIMARY KEY(id) 
             );

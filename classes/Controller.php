@@ -16,10 +16,30 @@ abstract class Controller{
     //builds the view file name - requires $view
     protected function return_view( $viewmodel, $fullview ){
         $view = 'views/' . get_class( $this ) . '/' . $this->action . '.php';
+
+        //choose menu to show based on priveliges
         if( $fullview ){
-            require_once( 'views/main.php' );
+            if( isset( $_SESSION['verified_user'] ) ){
+                if( $_SESSION['verified_user']['priveliges_id'] == 1 ){
+                    require_once( 'views/menus/fullPrivMenu.php' );
+                }else{
+                    require_once( 'views/menus/restrictedPrivMenu.php' );
+                }
+            }else{
+                require_once( 'views/menus/logInMenu.php' );
+            }
         }else{
-            require_once $view;
+            require_once( 'views/setup.php' );
+        }
+        
+    }
+
+    protected function check_priveliges(){
+        if( !isset( $_SESSION['verified_user'] ) ){
+            header("Location:" . SITE_URL);
+        }
+        if( !($_SESSION['verified_user']['priveliges_id'] == '1') ){
+            header("Location:" . SITE_URL);
         }
     }
 }

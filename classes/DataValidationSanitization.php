@@ -41,4 +41,15 @@ class DataValidationSanitization{
         return "Your $field_name must be a whole number.<br>";
     }
 
+    public function validate_priveliges_id( $field, $field_name ){
+        if( $field == '1' || $field == '2' ){
+            return '';
+        }
+        return "$field_name must only be 1 or 2";
+    }
+
+    public function hash_password( $password ){
+        return password_hash( $password, PASSWORD_DEFAULT );
+    }
+
 }

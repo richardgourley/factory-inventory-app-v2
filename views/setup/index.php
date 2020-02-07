@@ -1,8 +1,8 @@
 <?php echo $viewmodel; ?>
 
 <div>
-  <h3>Add a user</h3>
-  <form method="post" action="<?php htmlentities( SITEPATH . '/models/user.php' ); ?>">
+  <h3>Create an account to begin using the app</h3>
+  <form method="post" action="<?php htmlentities( SITEPATH . '/models/setup.php' ); ?>">
       <table class="form-table">
         <tbody>
           <tr>
@@ -23,30 +23,11 @@
             </td>
           </tr>
           <tr>
-            <th>
-              Priveliges Level:
-            </th>
             <td>
-              <input type="text" name="priveliges_id" placeholder="Priveliges Level">
-              <small>Enter 1 for full access. Enter 2 to only view products.</small>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input type="submit" name="submit" value="Add User">
+              <input type="submit" name="submit" value="Create New User">
             </td>
           </tr> 
         </tbody>
       </table>
   </form>
 </div>
-
-
-
-
-
-
-
-
-
-

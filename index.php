@@ -1,6 +1,10 @@
 <?php 
 session_start();
 
+if( isset( $_SESSION['post_message'] ) ){
+    echo $_SESSION['post_message'];
+    $_SESSION['post_message'] = '';
+}
 //get config file 
 require_once('config.php');
 //get handler class that creates the controller.
@@ -15,33 +19,17 @@ require_once('controllers/product.php');
 require_once('models/product.php');
 require_once('controllers/user.php');
 require_once('models/user.php');
+require_once('controllers/setup.php');
+require_once('models/setup.php');
 
 //First time use - set up database and direct to user set up
 $db_setup = new DbSetUp();
-//var_dump( $_GET ); 
-//var_dump( $_SESSION );
-/*
-if( $db_setup->db_is_setup() ){
-    if( $db_setup->main_admin_is_setup() ){
-    	//normal handler
-    	var_dump('DB OK ADMIN OK');
-    	$handler = new Handler( $_GET );
-    }else{
-        //direct to first time page - dont set up db
-        var_dump('DB OK ADMIN NOT OK');
-        $handler = new Handler( array( 'controller' => 'product', 'action' => 'add' ) );
-    }
+
+if( !$db_setup->db_is_setup() ){
+    $handler = new Handler( array( 'controller'=>'setup', 'action'=>'index' ) ); 
 }else{
-	//set up db
-	//direct to first time page
-	var_dump('DB NOT OK');
-	$handler = new Handler( array( 'controller' => 'product', 'action' => 'add' ) );
+    $handler = new Handler( $_GET ); 
 }
-*/
-
-//$handler = new Handler( array( 'controller' => 'product', 'action' => 'add' ) );
-
-$handler = new Handler( $_GET );
 
 $controller = $handler->create_controller();
 

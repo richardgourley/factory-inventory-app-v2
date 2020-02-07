@@ -21,7 +21,6 @@ class Handler{
             $this->action = $request['action'];
         }
 
-
     }
 
     public function create_controller(){

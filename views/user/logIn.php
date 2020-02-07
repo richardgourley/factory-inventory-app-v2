@@ -1,7 +1,7 @@
-<?php echo $viewmodel; ?>
+<?php echo $viewmodel ?>
 
 <div>
-  <h3>Add a user</h3>
+  <h3>Log In</h3>
   <form method="post" action="<?php htmlentities( SITEPATH . '/models/user.php' ); ?>">
       <table class="form-table">
         <tbody>
@@ -23,23 +23,15 @@
             </td>
           </tr>
           <tr>
-            <th>
-              Priveliges Level:
-            </th>
             <td>
-              <input type="text" name="priveliges_id" placeholder="Priveliges Level">
-              <small>Enter 1 for full access. Enter 2 to only view products.</small>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input type="submit" name="submit" value="Add User">
+              <input type="submit" name="submit" value="Log In">
             </td>
           </tr> 
         </tbody>
       </table>
   </form>
 </div>
+
 
 
 
