@@ -23,7 +23,6 @@ class DbSetUp extends Model{
     }
 
     public function main_admin_is_setup(){
-    	var_dump('main admin is setup being called');
     	if( !$this->db_is_setup() ){
     		return false;
     	}
