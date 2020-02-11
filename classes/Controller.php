@@ -42,4 +42,10 @@ abstract class Controller{
             header("Location:" . SITE_URL);
         }
     }
+
+    protected function check_is_verified_user(){
+        if( !isset( $_SESSION['verified_user'] ) ){
+            header("Location:" . SITE_URL);
+        }
+    }
 }
