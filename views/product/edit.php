@@ -18,7 +18,7 @@
             </th>
             <td>
               <input type="text" name="product_number" placeholder="Product Number" 
-              value="<?php echo $product['product_number']; ?>">
+              value="<?php echo htmlentities( $product['product_number'], ENT_QUOTES ); ?>">
             </td>
           </tr>
           <tr>
