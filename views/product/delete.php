@@ -17,7 +17,7 @@
               Product Number:
             </th>
             <td>
-              <p><?php echo $product['product_number']; ?></p>
+              <p><?php echo htmlentities( $product['product_number'], ENT_QUOTES ); ?></p>
             </td>
           </tr>
           <tr>
@@ -25,7 +25,7 @@
               Product Name:
             </th>
             <td>
-              <p><?php echo $product['product_name']; ?></p>
+              <p><?php echo htmlentities( $product['product_name'], ENT_QUOTES ); ?></p>
             </td>
           </tr>
           <tr>
@@ -33,7 +33,7 @@
               Description:
             </th>
             <td>
-              <p><?php echo $product['description']; ?></p>
+              <p><?php echo htmlentities( $product['description'], ENT_QUOTES ); ?></p>
             </td>
           </tr> 
           <tr>
@@ -41,7 +41,7 @@
               Cost Price:
             </th>
             <td>
-              <p><?php echo $product['cost_price']; ?></p>
+              <p><?php echo htmlentities( $product['cost_price'], ENT_QUOTES ); ?></p>
             </td>
           </tr> 
           <tr>
@@ -49,7 +49,7 @@
               Quantity In Stock:
             </th>
             <td>
-              <p><?php echo $product['quantity_in_stock']; ?></p>
+              <p><?php echo htmlentities( $product['quantity_in_stock'], ENT_QUOTES ); ?></p>
             </td>
           </tr>  
           <tr>
