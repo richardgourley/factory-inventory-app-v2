@@ -7,6 +7,7 @@ class UserModel extends Model{
         $handle = $conn->prepare( $query );
         $handle->execute();
         $results = $handle->fetchAll( PDO::FETCH_ASSOC ); 
+        $conn = null;
         return $results;
     }
 
@@ -105,12 +106,17 @@ class UserModel extends Model{
 
         if( $_SERVER['REQUEST_METHOD'] == 'POST' && isset( $_POST['submit'] ) ){
             if( $_POST['submit'] == 'Delete User' ){
+                
+                if( $_POST['priveliges_id'] == 1 && $this->only_one_main_priveliges_user() ){
+                    echo "Warning! You can't delete this user!";
+                    return $this->Index();
+                }
 
                 $validation = new DataValidationSanitization();
                 $error_message .= $validation->validate_int( $_POST['id'], 'ID' );
                 
                 if( !$error_message == '' ){
-                    echo "Sorry. There was a problem deleting this product.";
+                    echo "Sorry. There was a problem deleting this user.";
                 }else{
                     $conn = $this->connect();
         
@@ -131,12 +137,25 @@ class UserModel extends Model{
             }
         }
 
-        $conn = $this->connect();
-        $query = "SELECT * FROM users";
-        $handle = $conn->prepare( $query );
-        $handle->execute();
-        $results = $handle->fetchAll( PDO::FETCH_ASSOC ); 
-        return $results;
+        return $this->Index();
+
+    }
+
+    //@returns - bool
+    //tells us if only one user exists with priveliges_id '1' (must leave ONE user with priveliges_id '1')
+    private function only_one_main_priveliges_user(){
+        $results = $this->Index();
+        $counter = 0;
+        foreach( $results as $user ){
+            if( $user['priveliges_id'] == 1 ){
+                $counter++;
+            }
+        } 
+        if( $counter == 1 ){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public function LogIn(){
