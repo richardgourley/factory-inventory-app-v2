@@ -10,7 +10,7 @@
   <form method="post" action="<?php htmlentities( SITEPATH . '/models/product.php' ); ?>">
       <table class="form-table">
         <tbody>
-            <input type="hidden" name="id" placeholder="ID" 
+            <input type="hidden" name="id" 
             value="<?php echo $product['id']; ?>">
           <tr>
             <th>
