@@ -45,7 +45,7 @@
             </th>
             <td>
               <input type="text" name="cost_price" placeholder="Cost Price"
-              value="<?php echo $product['cost_price']; ?>">
+              value="<?php echo htmlentities( $product['cost_price'], ENT_QUOTES ); ?>">
             </td>
           </tr> 
           <tr>
@@ -54,7 +54,7 @@
             </th>
             <td>
               <input type="text" name="quantity_in_stock" placeholder="Quantity in Stock"
-              value="<?php echo $product['quantity_in_stock']; ?>">
+              value="<?php echo htmlentities( $product['quantity_in_stock'], ENT_QUOTES ); ?>">
             </td>
           </tr>  
           <tr>
