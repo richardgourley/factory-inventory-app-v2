@@ -12,7 +12,7 @@
               Username:
             </th>
             <td>
-              <p><?php echo $user['username']; ?></p>
+              <p><?php echo htmlentities( $user['username'], ENT_QUOTES ); ?></p>
             </td>
           </tr>
           <tr>
@@ -20,7 +20,7 @@
               Priveliges Level:
             </th>
             <td>
-              <p><?php echo $user['priveliges_id']; ?></p>
+              <p><?php echo htmlentities( $user['priveliges_id'], ENT_QUOTES ); ?></p>
             </td>
           </tr> 
           <tr>
