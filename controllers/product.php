@@ -2,9 +2,7 @@
 class Product extends Controller{
 
 	public function Index(){
-        if( !isset( $_SESSION['verified_user'] ) ){
-            header("Location:" . SITE_URL);
-        }
+        $this->check_is_verified_user();
 		$viewmodel = new ProductModel();
 		$this->return_view( $viewmodel->Index(), true );
 	}
