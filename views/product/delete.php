@@ -1,5 +1,10 @@
 <h1>Delete Product</h1>
 
+<?php if( count( $viewmodel ) == 0 ): ?>
+<h3>There are currently no products to delete</h3>
+<?php endif; ?>
+<?php return; ?>
+
 <?php foreach( $viewmodel as $product ): ?>
 <div>
   <form method="post" action="<?php htmlentities( SITEPATH . '/models/product.php' ); ?>">
