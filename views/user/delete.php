@@ -21,6 +21,8 @@
             </th>
             <td>
               <p><?php echo htmlentities( $user['priveliges_id'], ENT_QUOTES ); ?></p>
+              <input type="hidden" name="priveliges_id" 
+              value="<?php echo htmlentities( $user['priveliges_id'], ENT_QUOTES ); ?>">
             </td>
           </tr> 
           <tr>
