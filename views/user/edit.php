@@ -13,7 +13,7 @@
             </th>
             <td>
               <input type="text" name="username" placeholder="Username" 
-              value="<?php echo $user['username']; ?>">
+              value="<?php echo htmlentities( $user['username'], ENT_QUOTES ); ?>">
             </td>
           </tr>
           <tr>
@@ -22,7 +22,7 @@
             </th>
             <td>
               <input type="text" name="priveliges_id" placeholder="Priveliges Level"
-              value="<?php echo $user['priveliges_id']; ?>">
+              value="<?php echo htmlentities( $user['priveliges_id'], ENT_QUOTES ); ?>">
             </td>
           </tr> 
           <tr>

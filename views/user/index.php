@@ -2,8 +2,8 @@
 
 <?php foreach( $viewmodel as $user ): ?>
 <div>
-  <h3><?php echo 'Username: ' . $user['username']; ?></h3>
-  <p><?php echo 'Priveliges Level: ' . $user['priveliges_id']; ?></p>
+  <h3><?php echo 'Username: ' . htmlentities( $user['username'], ENT_QUOTES ); ?></h3>
+  <p><?php echo 'Priveliges Level: ' . htmlentities( $user['priveliges_id'], ENT_QUOTES ); ?></p>
 </div>
 <?php endforeach; ?>
 
