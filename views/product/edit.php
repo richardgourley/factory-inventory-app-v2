@@ -1,5 +1,10 @@
 <h1>Edit a product</h1>
 
+<?php if( count( $viewmodel ) == 0 ): ?>
+<h3>There are currently no products to edit</h3>
+<?php endif; ?>
+<?php return; ?>
+
 <?php foreach( $viewmodel as $product ): ?>
 <div>
   <form method="post" action="<?php htmlentities( SITEPATH . '/models/product.php' ); ?>">
