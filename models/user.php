@@ -43,15 +43,14 @@ class UserModel extends Model{
                     $conn = null;
 
                     if( $result ){
-                        $_SESSION['post_message'] = 'User successfully added!';
-                        header("Location:" . SITE_URL . '/home/index');
+                        return 'User successfully added!';
                     }
                 }
             }
 
         }
         
-        return '';
+        return;
     }
 
     public function Edit(){
@@ -108,8 +107,9 @@ class UserModel extends Model{
             if( $_POST['submit'] == 'Delete User' ){
                 
                 if( $_POST['priveliges_id'] == 1 && $this->only_one_main_priveliges_user() ){
-                    echo "Warning! You can't delete this user!";
-                    return $this->Index();
+                    //echo "Warning! You can't delete this user!";
+                    //return $this->Index();
+                    return "Warning! You can't delete this user!";
                 }
 
                 $validation = new DataValidationSanitization();
@@ -129,8 +129,9 @@ class UserModel extends Model{
                     $conn = null;
 
                     if( $result ){
-                        $_SESSION['post_message'] = 'User successfully deleted!';
-                        header("Location:" . SITE_URL . '/home/index');
+                        //$_SESSION['post_message'] = 'User successfully deleted!';
+                        //header("Location:" . SITE_URL . '/home/index');
+                        return "User successfully deleted!";
                     }
                 }
 
