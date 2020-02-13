@@ -2,8 +2,8 @@
 
 <?php if( count( $viewmodel ) == 0 ): ?>
 <h3>There are currently no products to delete</h3>
-<?php endif; ?>
 <?php return; ?>
+<?php endif; ?>
 
 <?php foreach( $viewmodel as $product ): ?>
 <div>
