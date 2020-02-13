@@ -47,8 +47,7 @@ class ProductModel extends Model{
                     $conn = null;
 
                     if( $result ){
-                        $_SESSION['post_message'] = 'Product successfully added!';
-                        header("Location:" . SITE_URL . '/home/index');
+                        return 'Product successfully added!';
                     }
                 }
             }
