@@ -1,4 +1,9 @@
-<h1>Edit a product</h1>
+<h1>Edit a user</h1>
+
+<?php if( gettype( $viewmodel) == 'string' ): ?>
+  <h3 class="message"><?php echo $viewmodel ?></h3>
+<?php return; ?>
+<?php endif; ?>
 
 <?php foreach( $viewmodel as $user ): ?>
 <div>
