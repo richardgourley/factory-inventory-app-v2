@@ -66,7 +66,7 @@ class UserModel extends Model{
                 $error_message .= $validation->validate_priveliges_id( $_POST['priveliges_id'], 'Priveliges Level' );
 
                 if( !$error_message == '' ){
-                    echo $error_message;
+                    return $error_message;
                 }else{
                     $conn = $this->connect();
         
@@ -84,8 +84,7 @@ class UserModel extends Model{
                     $conn = null;
 
                     if( $result ){
-                        $_SESSION['post_message'] = 'User successfully updated!';
-                        header("Location:" . SITE_URL . '/home/index');
+                        return 'User successfully updated!';
                     }
                 }
             }
