@@ -1,4 +1,9 @@
-<?php echo $viewmodel; ?>
+<h1>Add a User</h1>
+
+<?php if( gettype( $viewmodel) == 'string' ): ?>
+  <h3 class="message"><?php echo $viewmodel ?></h3>
+<?php return; ?>
+<?php endif; ?>
 
 <div>
   <h3>Add a user</h3>
