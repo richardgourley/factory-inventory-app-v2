@@ -3,7 +3,7 @@ class HomeModel extends Model{
     
     public function Index(){
     	
-        return '';
+        return 'Welcome! Choose an option from the menu';
     }
 
 }
