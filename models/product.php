@@ -76,7 +76,7 @@ class ProductModel extends Model{
                 $error_message .= $validation->validate_int( $post['quantity_in_stock'], 'Quantity in Stock' );
 
                 if( !$error_message == '' ){
-                    echo $error_message;
+                    return $error_message;
                 }else{
                     $conn = $this->connect();
         
@@ -100,8 +100,7 @@ class ProductModel extends Model{
                     $conn = null;
 
                     if( $result ){
-                        $_SESSION['post_message'] = 'Product successfully updated!';
-                        header("Location:" . SITE_URL . '/home/index');
+                        return 'Product successfully updated!';
                     }
                 }
             }
@@ -125,7 +124,7 @@ class ProductModel extends Model{
                 $error_message .= $validation->validate_int( $_POST['id'], 'ID' );
                 
                 if( !$error_message == '' ){
-                    echo "Sorry. There was a problem deleting this product.";
+                    return "Sorry. There was a problem deleting this product.";
                 }else{
                     $conn = $this->connect();
         
@@ -138,8 +137,7 @@ class ProductModel extends Model{
                     $conn = null;
 
                     if( $result ){
-                        $_SESSION['post_message'] = 'Product successfully deleted!';
-                        header("Location:" . SITE_URL . '/home/index');
+                        return 'Product successfully deleted!';
                     }
                 }
 
