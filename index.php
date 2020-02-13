@@ -1,10 +1,6 @@
 <?php 
 session_start();
 
-if( isset( $_SESSION['post_message'] ) ){
-    echo $_SESSION['post_message'];
-    $_SESSION['post_message'] = '';
-}
 //get config file 
 require_once('config.php');
 //get handler class that creates the controller.
