@@ -1,5 +1,10 @@
 <h1>Delete User</h1>
 
+<?php if( gettype( $viewmodel) == 'string' ): ?>
+  <h3 class="message"><?php echo $viewmodel ?></h3>
+<?php return; ?>
+<?php endif; ?>
+
 <?php foreach( $viewmodel as $user ): ?>
 <div>
   <form method="post" action="<?php htmlentities( SITEPATH . '/models/user.php' ); ?>">
