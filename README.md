@@ -1,8 +1,9 @@
 # Factory Inventory App - version 2
-A web based app MVC app written in PHP without a framework.
+An MVC web application written in PHP without a framework.
 The app is written to connect to and set up the database tables on first use.
 There is a Model and Controller base class and a DbSetUp and Handler class.
-The database table has PRODUCTS, USERS and PRIVELIGES tables.
+The database table has the following tables: 
+   PRODUCTS, USERS and PRIVELIGES
 The app utilizes sessions with a login and logout system.
 
 Users with priveliges_id '1' can add, edit and delete products and users.
